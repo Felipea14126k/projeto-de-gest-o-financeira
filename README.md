@@ -1,18 +1,50 @@
-                        Aplicativo de gestão financeira
-                    
-O App é recomendado para uso pessoal por maquina/computador.
-Incluso sistema de perfis em casos de mais de uma pessoa usando o dispositivo
-Exemplo: Um computador para uma casa que tem 3 pessoas.
+# 📌 Sobre o Projeto
 
-Uma copia do app mais basica e inicial pode ser usada para demontração de escola, como projetos de gestão financeira basica (Como ganho de mesada e gasto.)e demonstração de trabalhos e atividade de logica de programação e desenvolvimento de software,
+Aplicativo de gestão financeira desenvolvido em Python para uso pessoal em computador.
 
-Feedback: Qualquer bug, problema técnico e outros problemas ligados ao aplicativo devera ser reportados aos devs
-Email para contato: gu.souz1309@gmail.com
+O sistema é recomendado para máquinas compartilhadas, pois conta com sistema de perfis individuais, permitindo que mais de uma pessoa utilize o mesmo dispositivo.
 
-Possivei metas de atualização futura será:
-Conexão com app de banco(EX: Inter, Nubank e entre outros).
-implementação de conexão com mundo de investimento.
-Noticias sobre bolsa de valores para aqueles que quiserem ver algumas informações.(será pensado futuramente em equipe)
-implementação de grafico funcional com atualização de gastos e rendimento de investimentos feitos em seus bancos esocolidos.
-ter um perfil e mais de um banco conectados a sua conta.(Ter um perfil conectados diretamente a sua conta do Nubank e o Inter juntos)
+### Exemplo de uso:
+Um computador em uma casa com 3 pessoas, onde cada uma possui seu próprio perfil financeiro.
 
+---
+
+# 🎓 Aplicação educacional
+
+Uma versão mais simples do aplicativo também pode ser utilizada para:
+
+- demonstrações escolares  
+- projetos de gestão financeira básica  
+- controle de mesada e gastos pessoais  
+- atividades de lógica de programação  
+- estudos de desenvolvimento de software  
+
+---
+
+# 📩 Feedback e suporte
+
+Qualquer bug, problema técnico ou sugestão de melhoria pode ser reportado para:
+
+**Email:** gu.souz1309@gmail.com
+
+---
+
+# 🚀 Metas futuras do projeto
+
+Possíveis evoluções planejadas:
+
+- conexão com bancos digitais como :contentReference[oaicite:1]{index=1} e :contentReference[oaicite:2]{index=2}  
+- integração com área de investimentos  
+- exibição de notícias sobre mercado financeiro  
+- gráficos de gastos e rendimento  
+- múltiplos bancos conectados ao mesmo perfil  
+- dashboard financeiro completo  
+
+### Exemplo futuro:
+Um único perfil conectado simultaneamente a contas do Nubank e Banco Inter.
+
+---
+
+# 🧠 Visão de evolução
+
+O objetivo é transformar o projeto em um sistema mais completo, evoluindo de terminal para API e interface gráfica.
