@@ -91,7 +91,7 @@ def escolher_perfil():
 
     while True:
 
-        print("\n=== PERFIS ===")
+        print("\n=== MENU INICIAL ===")
         print("1 - Entrar em perfil")
         print("2 - Criar novo perfil")
         print("3 - Excluir perfil")
@@ -106,7 +106,7 @@ def escolher_perfil():
                 print("Nenhum perfil encontrado.")
                 continue
 
-            print("\nPerfis disponíveis:")
+            print("\nVoltar ao menu")
 
             for i, nome in enumerate(perfis, start=1):
                 print(f"{i} - {nome}")
@@ -135,6 +135,11 @@ def escolher_perfil():
         else:
             print("Opção inválida.")
 
+def salvar_perfil(perfil):
+    caminho = f"{CAMINHO_PASTA}/{perfil['nome']}.json"
+
+    with open(caminho, "w", encoding="utf-8") as arquivo:
+        json.dump(perfil, arquivo, ensure_ascii=False)
 
 ##def criar_perfil():
 ##  nome = input("Olá, qual seu nome de usuário? ")
