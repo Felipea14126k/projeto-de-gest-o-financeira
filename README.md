@@ -1,6 +1,5 @@
                         Aplicativo de gestão financeira
-                        ![Python](https://img.shields.io/badge/Python-3.x-blue)
-
+                    
 O App é recomendado para uso pessoal por maquina/computador.
 Incluso sistema de perfis em casos de mais de uma pessoa usando o dispositivo
 Exemplo: Um computador para uma casa que tem 3 pessoas.
