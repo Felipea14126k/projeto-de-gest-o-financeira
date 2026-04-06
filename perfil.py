@@ -4,38 +4,6 @@ import json
 CAMINHO_PASTA = "perfis"
 
 
-def perfil_existe():
-    return os.path.exists(CAMINHO_PASTA) and len(os.listdir(CAMINHO_PASTA)) > 0
-
-
-def criar_perfil():
-
-    while True:
-
-        nome = input("Olá, qual seu nome de usuário? ").strip()
-
-        if len(nome) < 3:
-            print("Nome muito curto.")
-            continue
-
-        if len(nome) > 60:
-            print("Nome muito grande.")
-            continue
-
-        break
-
-    os.makedirs(CAMINHO_PASTA, exist_ok=True)
-
-    caminho = f"{CAMINHO_PASTA}/{nome}.json"
-
-    with open(caminho, "w", encoding="utf-8") as arquivo:
-        json.dump({"nome": nome}, arquivo, ensure_ascii=False)
-
-
-def carregar_perfil(nome):
-    with open(f"{CAMINHO_PASTA}/{nome}.json", "r", encoding="utf-8") as arquivo:
-        return json.load(arquivo)
-
 
 def listar_perfis():
 
