@@ -108,11 +108,3 @@ def salvar_perfil(perfil):
 
     with open(caminho, "w", encoding="utf-8") as arquivo:
         json.dump(perfil, arquivo, ensure_ascii=False)
-
-##def criar_perfil():
-##  nome = input("Olá, qual seu nome de usuário? ")
-##
-##  os.makedirs("perfis", exist_ok=True)
-
-##with open(CAMINHO_PERFIL, "w", encoding="utf-8") as arquivo:
-##  json.dump({"nome": nome}, arquivo, ensure_ascii=False)
