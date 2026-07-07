@@ -8,28 +8,27 @@ def perfil_existe():
     return os.path.exists(CAMINHO_PASTA) and len(os.listdir(CAMINHO_PASTA)) > 0
 
 
-def criar_perfil():
+def criar_perfil(nome):
 
-    while True:
+    nome = nome.strip()
 
-        nome = input("Olá, qual seu nome de usuário? ").strip()
+    if len(nome) < 3:
+        return False, "Nome muito curto."
 
-        if len(nome) < 3:
-            print("Nome muito curto.")
-            continue
-
-        if len(nome) > 60:
-            print("Nome muito grande.")
-            continue
-
-        break
+    if len(nome) > 60:
+        return False, "Nome muito grande."
 
     os.makedirs(CAMINHO_PASTA, exist_ok=True)
 
     caminho = f"{CAMINHO_PASTA}/{nome}.json"
 
+    if os.path.exists(caminho):
+        return False, "Esse perfil já existe."
+
     with open(caminho, "w", encoding="utf-8") as arquivo:
         json.dump({"nome": nome}, arquivo, ensure_ascii=False)
+
+    return True, "Perfil criado com sucesso."
 
 
 def carregar_perfil(nome):
@@ -39,6 +38,9 @@ def carregar_perfil(nome):
 
 def listar_perfis():
 
+    if not os.path.exists(CAMINHO_PASTA):
+        return []
+
     arquivos = os.listdir(CAMINHO_PASTA)
 
     return [
@@ -46,7 +48,6 @@ def listar_perfis():
         for arquivo in arquivos
         if arquivo.endswith(".json")
     ]
-
 
 def excluir_perfil():
 
@@ -123,17 +124,6 @@ def escolher_perfil():
                 print("Perfil inválido.")
                 continue
 
-            nome = perfis[escolha - 1]
-            return carregar_perfil(nome)
-
-        elif opcao == "2":
-            criar_perfil()
-
-        elif opcao == "3":
-            excluir_perfil()
-
-        else:
-            print("Opção inválida.")
 
 def salvar_perfil(perfil):
     caminho = f"{CAMINHO_PASTA}/{perfil['nome']}.json"
@@ -141,10 +131,4 @@ def salvar_perfil(perfil):
     with open(caminho, "w", encoding="utf-8") as arquivo:
         json.dump(perfil, arquivo, ensure_ascii=False)
 
-##def criar_perfil():
-##  nome = input("Olá, qual seu nome de usuário? ")
-##
-##  os.makedirs("perfis", exist_ok=True)
 
-##with open(CAMINHO_PERFIL, "w", encoding="utf-8") as arquivo:
-##  json.dump({"nome": nome}, arquivo, ensure_ascii=False)
