@@ -1,15 +1,17 @@
 import sqlite3
 
-
-def conectar(nome_perfil):
-    return sqlite3.connect(f"{nome_perfil}.db")
+NOME_BANCO = "dados.db"
 
 
-def criar_tabelas(nome_perfil):
-    conn = conectar(nome_perfil)
+def conectar():
+    return sqlite3.connect(NOME_BANCO)
+
+
+def criar_tabelas():
+    conn = conectar()
     cursor = conn.cursor()
-    cursor.execute(
-        """
+
+    cursor.execute("""
     CREATE TABLE IF NOT EXISTS transacoes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         data TEXT,
@@ -18,25 +20,23 @@ def criar_tabelas(nome_perfil):
         valor REAL,
         origem TEXT
     )
-    """
-    )
-    cursor.execute(
-        """
+    """)
+
+    cursor.execute("""
     CREATE TABLE IF NOT EXISTS salario (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         valor REAL,
         dia_pagamento INTEGER
     )
-    """
-    )
-    cursor.execute(
-        """
+    """)
+
+    cursor.execute("""
     CREATE TABLE IF NOT EXISTS salario_lancado (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         mes INTEGER,
         ano INTEGER
     )
-    """
-    )
+    """)
+
     conn.commit()
     conn.close()

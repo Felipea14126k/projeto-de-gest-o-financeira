@@ -1,14 +1,13 @@
 from database import conectar
 
-
-def adicionar_transacao(nome_perfil):
+def adicionar_transacao():
 
     data = input("Data (DD-MM-YYY): ")
     descricao = input("Descrição: ")
     tipo = input("Tipo (credito/debito): ")
     valor = float(input("Valor (0.00): "))
 
-    conn = conectar(nome_perfil)
+    conn = conectar()
     cursor = conn.cursor()
 
     cursor.execute(
@@ -26,11 +25,11 @@ def adicionar_transacao(nome_perfil):
     print("Transação adicionada.")
 
 
-def deletar_transacao(nome_perfil):
+def deletar_transacao():
 
     id = input("ID da transação: ")
 
-    conn = conectar(nome_perfil)
+    conn = conectar()
     cursor = conn.cursor()
 
     cursor.execute("DELETE FROM transacoes WHERE id=?", (id,))
@@ -41,9 +40,9 @@ def deletar_transacao(nome_perfil):
     print("Transação removida.")
 
 
-def mostrar_saldo(nome_perfil):
+def mostrar_saldo():
 
-    conn = conectar(nome_perfil)
+    conn = conectar()
     cursor = conn.cursor()
 
     cursor.execute(
@@ -65,9 +64,9 @@ def mostrar_saldo(nome_perfil):
     conn.close()
 
 
-def relatorio_despesas(nome_perfil):
+def relatorio_despesas():
 
-    conn = conectar(nome_perfil)
+    conn = conectar()
     cursor = conn.cursor()
 
     cursor.execute(

@@ -92,7 +92,7 @@ class Login(QWidget):
             "Erro",
             "Crie um perfil primeiro."
         )
-        return
+          return
 
         perfil = carregar_perfil(nome)
 
@@ -101,12 +101,4 @@ class Login(QWidget):
         "Sucesso",
         f"Bem-vindo, {perfil['nome']}!"
     )
-
-        perfil = carregar_perfil(nome)
-
-        QMessageBox.information(
-            self,
-            "Sucesso",
-            f"Bem-vindo, {perfil['nome']}!"
-        )
 

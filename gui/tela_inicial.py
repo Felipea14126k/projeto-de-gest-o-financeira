@@ -55,7 +55,7 @@ class TelaInicial(QWidget):
         btn_criar = QPushButton("Criar Perfil")
 
         estilo_botao = """
-        QPushButton{
+         QPushButton{
             background:#00C853;
             color:white;
             border:none;
@@ -68,6 +68,17 @@ class TelaInicial(QWidget):
             background:#00E676;
         }
         """
+        btn_login.setStyleSheet(estilo_botao)
+        btn_criar.setStyleSheet(estilo_botao)
+
+        btn_login.clicked.connect(self.entrar)
+        btn_criar.clicked.connect(self.criar_perfil)
+
+        #Buscaer os perfis existentes
+
+        if len(listar_perfis()) == 0:
+            btn_login.setEnabled(False)
+            btn_login.setText("Nenhum perfil disponível")
 
         btn_login = QPushButton("Entrar")
         btn_criar = QPushButton("Criar Perfil")
